@@ -10,14 +10,11 @@ export default function Welcome() {
           {/* Image */}
           <AnimateOnScroll>
             <div className="rounded-2xl overflow-hidden shadow-xl">
-              <svg viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg" className="w-full">
-                <rect width="600" height="500" fill="#f5e6d3" />
-                <circle cx="300" cy="180" r="80" fill="rgba(139,69,19,0.12)" />
-                <rect x="230" y="280" width="140" height="20" rx="4" fill="rgba(139,69,19,0.08)" />
-                <text x="300" y="390" textAnchor="middle" fill="rgba(139,69,19,0.35)" fontSize="16" fontFamily="sans-serif">
-                  Pastor Timothy Ross
-                </text>
-              </svg>
+              <img
+                src="/pastor.jpg"
+                alt="Pastor Timothy and Julie Ross"
+                className="w-full object-cover"
+              />
             </div>
           </AnimateOnScroll>
 

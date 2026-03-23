@@ -16,9 +16,31 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: "Gideon Baptist Church | Warren, MI",
+  title: {
+    default: "Gideon Baptist Church | Independent Baptist Church in Warren, MI",
+    template: "%s | Gideon Baptist Church",
+  },
   description:
-    "Welcome to Gideon Baptist Church in Warren, MI. An independent, missions-minded Baptist church. Join us for worship, fellowship, and community.",
+    "Gideon Baptist Church is an independent, KJV Bible-believing Baptist church in Warren, MI. Pastor Timothy Ross welcomes you to Sunday worship at 10 AM & 11 AM and Wednesday Bible study at 7 PM. Serving Macomb County since 1956.",
+  keywords: [
+    "Gideon Baptist Church",
+    "Baptist church Warren MI",
+    "independent Baptist church Michigan",
+    "KJV church Warren",
+    "Pastor Timothy Ross",
+    "church near me Warren Michigan",
+    "Bible believing church Macomb County",
+    "Sunday worship Warren MI",
+    "Baptist church near me",
+  ],
+  openGraph: {
+    title: "Gideon Baptist Church | Warren, MI",
+    description:
+      "An independent, missions-minded Baptist church serving Warren, MI since 1956. Join Pastor Timothy Ross for Sunday worship and Wednesday Bible study. All are welcome!",
+    type: "website",
+    locale: "en_US",
+    siteName: "Gideon Baptist Church",
+  },
   icons: {
     icon: "/favicon.svg",
   },
