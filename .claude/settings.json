@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:gideonbaptist.org)",
+      "WebFetch(domain:www.faithstreet.com)",
+      "WebFetch(domain:www.churchfinder.com)",
+      "WebFetch(domain:www.kjvchurches.com)",
+      "WebFetch(domain:www.facebook.com)",
+      "WebFetch(domain:www.unitedstateschurches.com)",
+      "Bash(cat /Users/elijahdesent/rolewithit/vite.config.*)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm --no-turbopack)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm --no-turbopack --yes)"
+    ]
+  }
+}
