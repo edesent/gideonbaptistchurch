@@ -1,5 +1,4 @@
-const SHEET_ID = process.env.NEXT_PUBLIC_GOOGLE_SHEET_ID || "";
-const SHEET_NAME = "Sheet1";
+const PUBLISHED_ID = process.env.NEXT_PUBLIC_GOOGLE_SHEET_ID || "";
 
 interface SheetEvent {
   title: string;
@@ -11,29 +10,66 @@ interface SheetEvent {
   accent: boolean;
 }
 
-export async function getEvents(): Promise<SheetEvent[]> {
-  if (!SHEET_ID) return [];
+function parseCSV(csv: string): string[][] {
+  const rows: string[][] = [];
+  let current = "";
+  let inQuotes = false;
+  let row: string[] = [];
 
-  const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=${SHEET_NAME}`;
+  for (let i = 0; i < csv.length; i++) {
+    const ch = csv[i];
+    if (inQuotes) {
+      if (ch === '"' && csv[i + 1] === '"') {
+        current += '"';
+        i++;
+      } else if (ch === '"') {
+        inQuotes = false;
+      } else {
+        current += ch;
+      }
+    } else {
+      if (ch === '"') {
+        inQuotes = true;
+      } else if (ch === ",") {
+        row.push(current);
+        current = "";
+      } else if (ch === "\n" || (ch === "\r" && csv[i + 1] === "\n")) {
+        row.push(current);
+        current = "";
+        rows.push(row);
+        row = [];
+        if (ch === "\r") i++;
+      } else {
+        current += ch;
+      }
+    }
+  }
+  if (current || row.length) {
+    row.push(current);
+    rows.push(row);
+  }
+  return rows;
+}
+
+export async function getEvents(): Promise<SheetEvent[]> {
+  if (!PUBLISHED_ID) return [];
+
+  const url = `https://docs.google.com/spreadsheets/d/e/${PUBLISHED_ID}/pub?gid=0&single=true&output=csv`;
 
   try {
     const res = await fetch(url, { next: { revalidate: 60 } });
     const text = await res.text();
+    const rows = parseCSV(text);
 
-    // Google wraps the JSON in a callback — strip it
-    const jsonString = text.replace(/^.*google\.visualization\.Query\.setResponse\(/, "").replace(/\);?\s*$/, "");
-    const data = JSON.parse(jsonString);
-
-    const rows = data.table.rows;
-
-    return rows.map((row: { c: ({ v: string | null } | null)[] }) => ({
-      title: row.c[0]?.v || "",
-      time: row.c[1]?.v || "",
-      description: row.c[2]?.v || "",
-      month: row.c[3]?.v || "",
-      day: row.c[4]?.v || "",
-      label: row.c[5]?.v || "",
-      accent: (row.c[6]?.v || "").toString().toLowerCase() === "true",
+    // First row is headers, skip it
+    return rows.slice(1).filter(row => row[0]?.trim()).map((row) => ({
+      title: row[0]?.trim() || "",
+      time: row[1]?.trim() || "",
+      description: row[2]?.trim() || "",
+      month: row[3]?.trim() || "",
+      day: row[4]?.trim() || "",
+      label: row[5]?.trim() || "",
+      accent: (row[6]?.trim() || "").toLowerCase() === "true",
     }));
   } catch {
     return [];
