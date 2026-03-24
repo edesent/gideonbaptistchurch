@@ -4,6 +4,7 @@ const quickLinks = [
   { href: "#services", label: "Service Times" },
   { href: "#ministries", label: "Ministries" },
   { href: "#contact", label: "Contact" },
+  { href: "/statement-of-faith", label: "Statement of Faith" },
 ];
 
 const serviceTimes = [

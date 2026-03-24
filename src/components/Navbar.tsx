@@ -9,6 +9,7 @@ const navLinks = [
   { href: "#ministries", label: "Ministries" },
   { href: "#events", label: "Events" },
   { href: "#contact", label: "Contact" },
+  { href: "/statement-of-faith", label: "Beliefs" },
 ];
 
 export default function Navbar() {
@@ -23,8 +24,9 @@ export default function Navbar() {
   }, []);
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
     setMenuOpen(false);
+    if (!href.startsWith("#")) return;
+    e.preventDefault();
     const el = document.querySelector(href);
     if (el) {
       const offset = 80;
