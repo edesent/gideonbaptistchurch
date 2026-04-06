@@ -10,7 +10,15 @@
       "WebFetch(domain:www.unitedstateschurches.com)",
       "Bash(cat /Users/elijahdesent/rolewithit/vite.config.*)",
       "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm --no-turbopack)",
-      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm --no-turbopack --yes)"
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm --no-turbopack --yes)",
+      "Bash(npm run:*)",
+      "Bash(gh auth:*)",
+      "Bash(ls -lh \"/Users/elijahdesent/gideonbaptistchurch/tim-ross-pastor \\(1\\).mp4\")",
+      "Bash(gh repo:*)",
+      "Bash(curl -sL \"https://docs.google.com/spreadsheets/d/e/2PACX-1vTZWGPaeJ1K-aRd4oa16aKuBVxH8Xq_e91RDE-KbM0hgftd0-snSorTU9RKlW3UCf98Cl8ZMAhTl19-/pub?gid=0&single=true&output=csv\")"
+    ],
+    "additionalDirectories": [
+      "/Users/elijahdesent/gideonbaptistchurch"
     ]
   }
 }
