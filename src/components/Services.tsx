@@ -20,10 +20,7 @@ const services = [
     desc: "Our main worship service with hymns, prayer, and Bible preaching.",
     featured: true,
     icon: (
-      <svg viewBox="0 0 48 48" fill="none" className="w-14 h-14 text-gold">
-        <path d="M24 4L24 44M14 18L34 18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-        <circle cx="24" cy="24" r="22" stroke="currentColor" strokeWidth="1.5" />
-      </svg>
+      <img src="/gideon-favcon.png" alt="" className="w-14 h-14 object-contain" />
     ),
   },
   {

@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     siteName: "Gideon Baptist Church",
   },
   icons: {
-    icon: "/favicon.svg",
+    icon: "/gideon-favcon.png",
   },
 };
 
