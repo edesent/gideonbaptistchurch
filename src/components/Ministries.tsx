@@ -48,8 +48,8 @@ const ministries = [
     ),
   },
   {
-    title: "Music & Choir",
-    desc: "Lifting voices in praise through traditional hymns and heartfelt worship — there's a place for every musical talent.",
+    title: "Hymns & Special Music",
+    desc: "Lifting voices in praise through traditional hymns and heartfelt special music — there's a place for every musical talent.",
     icon: (
       <svg viewBox="0 0 64 64" fill="none" className="w-16 h-16 text-brown-light">
         <circle cx="20" cy="44" r="8" stroke="currentColor" strokeWidth="2.5" />
@@ -59,11 +59,14 @@ const ministries = [
     ),
   },
   {
-    title: "Community Service",
-    desc: "Living out our faith through acts of love — food drives, community support, and being the hands and feet of Jesus in Warren.",
+    title: "Pastoral Counseling",
+    desc: "Confidential, Bible-based counsel from Pastor Ross for individuals, couples, and families walking through life's challenges.",
+    href: "/counseling",
     icon: (
       <svg viewBox="0 0 64 64" fill="none" className="w-16 h-16 text-brown-light">
-        <path d="M32 56s-20-12-20-28a12 12 0 0 1 20-9 12 12 0 0 1 20 9c0 16-20 28-20 28z" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round" />
+        <path d="M12 44c0-8 8-14 20-14s20 6 20 14v4H12v-4z" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round" />
+        <circle cx="32" cy="20" r="8" stroke="currentColor" strokeWidth="2.5" />
+        <path d="M44 12l4-4M20 12l-4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
       </svg>
     ),
   },
@@ -88,15 +91,31 @@ export default function Ministries() {
 
         {/* Cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
-          {ministries.map((m, i) => (
-            <AnimateOnScroll key={m.title} delay={i * 80}>
+          {ministries.map((m, i) => {
+            const content = (
               <div className="bg-white border border-brown-deep/[.05] rounded-2xl p-9 text-center hover:-translate-y-1 hover:shadow-lg hover:border-gold-light transition-all h-full">
                 <div className="flex justify-center mb-5">{m.icon}</div>
                 <h3 className="font-serif text-xl font-semibold text-text-dark mb-3">{m.title}</h3>
                 <p className="text-[0.92rem] text-text-light leading-relaxed">{m.desc}</p>
+                {m.href && (
+                  <span className="inline-block mt-4 text-sm font-semibold text-gold-dark">
+                    Learn More →
+                  </span>
+                )}
               </div>
-            </AnimateOnScroll>
-          ))}
+            );
+            return (
+              <AnimateOnScroll key={m.title} delay={i * 80}>
+                {m.href ? (
+                  <a href={m.href} className="block h-full">
+                    {content}
+                  </a>
+                ) : (
+                  content
+                )}
+              </AnimateOnScroll>
+            );
+          })}
         </div>
       </div>
     </section>
