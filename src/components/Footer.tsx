@@ -58,9 +58,9 @@ export default function Footer() {
           </div>
 
           {/* Connect */}
-          <div>
+          <div className="text-center sm:text-left">
             <h4 className="font-serif text-base font-semibold text-white mb-5">Connect With Us</h4>
-            <div className="flex gap-3 mb-6">
+            <div className="flex gap-3 mb-6 justify-center sm:justify-start">
               {/* Facebook */}
               <a
                 href="https://www.facebook.com/profile.php?id=100080675370083"
