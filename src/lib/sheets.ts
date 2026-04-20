@@ -1,6 +1,7 @@
-const PUBLISHED_ID = process.env.NEXT_PUBLIC_GOOGLE_SHEET_ID || "";
+const PUBLISHED_ID =
+  "2PACX-1vTZWGPaeJ1K-aRd4oa16aKuBVxH8Xq_e91RDE-KbM0hgftd0-snSorTU9RKlW3UCf98Cl8ZMAhTl19-";
 
-interface SheetEvent {
+export interface SheetEvent {
   title: string;
   time: string;
   description: string;
@@ -52,12 +53,11 @@ function parseCSV(csv: string): string[][] {
 }
 
 export async function getEvents(): Promise<SheetEvent[]> {
-  if (!PUBLISHED_ID) return [];
-
   const url = `https://docs.google.com/spreadsheets/d/e/${PUBLISHED_ID}/pub?gid=0&single=true&output=csv`;
 
   try {
-    const res = await fetch(url, { next: { revalidate: 60 } });
+    const res = await fetch(url, { next: { revalidate: 300 } });
+    if (!res.ok) return [];
     const text = await res.text();
     const rows = parseCSV(text);
 
