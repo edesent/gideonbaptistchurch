@@ -44,6 +44,15 @@ export default async function Events() {
         </div>
 
         <EventCards events={events} />
+
+        <div className="text-center mt-12">
+          <a
+            href="/facebook-events"
+            className="inline-block bg-gold text-brown-deep font-semibold text-sm tracking-wide uppercase px-9 py-3.5 rounded-full border-2 border-gold hover:bg-gold-light transition-all"
+          >
+            Facebook Event History
+          </a>
+        </div>
       </div>
     </section>
   );
