@@ -50,7 +50,7 @@ export default function Navbar() {
           onClick={(e) => handleLinkClick(e, "#home")}
           className="flex items-center gap-3 text-white"
         >
-          <span className="text-3xl text-gold leading-none">✞</span>
+          <img src="/gideon-favcon.png" alt="" className="w-8 h-8 object-contain" />
           <div className="flex flex-col">
             <span className="font-serif text-lg font-bold tracking-wide">
               Gideon Baptist Church
