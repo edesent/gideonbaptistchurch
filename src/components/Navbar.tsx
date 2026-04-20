@@ -30,6 +30,11 @@ export default function Navbar() {
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     setMenuOpen(false);
     if (!href.startsWith("#")) return;
+    if (isSubPage) {
+      e.preventDefault();
+      window.location.href = `/${href}`;
+      return;
+    }
     e.preventDefault();
     const el = document.querySelector(href);
     if (el) {
