@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import VideoGrid from "@/components/VideoGrid";
 import { getRecentVideos } from "@/lib/youtube";
 import type { Metadata } from "next";
 
@@ -91,42 +92,7 @@ export default async function Messages() {
                   <h3 className="font-serif text-2xl font-bold text-text-dark mb-6">
                     Previous Messages
                   </h3>
-                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {rest.map((video) => (
-                      <a
-                        key={video.id}
-                        href={video.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-md transition-all"
-                      >
-                        <div className="relative aspect-video bg-brown-deep overflow-hidden">
-                          {video.thumbnail && (
-                            <img
-                              src={video.thumbnail}
-                              alt={video.title}
-                              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                            />
-                          )}
-                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
-                            <div className="w-14 h-14 rounded-full bg-gold/95 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                              <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-brown-deep ml-1">
-                                <path d="M8 5v14l11-7z" />
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="p-5">
-                          <h4 className="font-serif text-base font-semibold text-text-dark mb-1 line-clamp-2 group-hover:text-gold-dark transition-colors">
-                            {video.title}
-                          </h4>
-                          <p className="text-xs text-text-light">
-                            {formatDate(video.published)}
-                          </p>
-                        </div>
-                      </a>
-                    ))}
-                  </div>
+                  <VideoGrid videos={rest} />
                 </>
               )}
 
