@@ -33,6 +33,7 @@ const cards: Card[] = [
     title: "Our Mission",
     text: "We desire to be an encouragement and blessing to families, to our community, and ultimately, to our country. Our hearts are set on missions, outreach, and sharing the love of Christ with everyone.",
     placeholder: "Community / Fellowship Photo",
+    image: "/building-outside.jpg",
     icon: (
       <>
         <circle cx="160" cy="140" r="40" fill="rgba(139,69,19,0.1)" />
