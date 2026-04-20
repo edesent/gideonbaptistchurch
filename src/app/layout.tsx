@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Lato } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -93,7 +94,15 @@ export default function RootLayout({
       lang="en"
       className={`${playfair.variable} ${lato.variable} antialiased`}
     >
-      <body className="min-h-screen flex flex-col">{children}</body>
+      <body className="min-h-screen flex flex-col">
+        {children}
+        <Script
+          src="https://slackwebsitechat.vercel.app/widget/wbc-chat.js"
+          data-api="https://slackwebsitechat.vercel.app"
+          data-key="wbc_1061fee63a24434361302602d8f8f0433a57b612ce1aa40f"
+          strategy="afterInteractive"
+        />
+      </body>
     </html>
   );
 }
