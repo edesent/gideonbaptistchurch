@@ -32,21 +32,23 @@ export default function FacebookEvents() {
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-md p-0 md:p-6 flex justify-center overflow-hidden">
-            <iframe
-              src={embedSrc}
-              title="Gideon Baptist Church Facebook posts"
-              style={{
-                border: "none",
-                overflow: "hidden",
-                width: "100%",
-                maxWidth: "500px",
-                height: "900px",
-              }}
-              scrolling="no"
-              allow="encrypted-media"
-              loading="lazy"
-            />
+          <div className="-mx-6 md:mx-0">
+            <div className="bg-white md:rounded-2xl md:shadow-md p-0 md:p-6 flex justify-center overflow-hidden">
+              <iframe
+                src={embedSrc}
+                title="Gideon Baptist Church Facebook posts"
+                style={{
+                  border: "none",
+                  overflow: "hidden",
+                  width: "100%",
+                  maxWidth: "500px",
+                  height: "900px",
+                }}
+                scrolling="no"
+                allow="encrypted-media"
+                loading="lazy"
+              />
+            </div>
           </div>
 
           <div className="text-center mt-10">
