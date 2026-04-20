@@ -19,7 +19,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 border-b border-white/[.08]">
           {/* Brand */}
-          <div>
+          <div className="flex flex-col items-center text-center">
             <img src="/gbc-logo.png" alt="Gideon Baptist Church logo" className="w-48 mb-4" />
             <p className="text-sm leading-relaxed">
               13899 Stephens Road<br />
