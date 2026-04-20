@@ -20,8 +20,7 @@ export default function Footer() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 border-b border-white/[.08]">
           {/* Brand */}
           <div>
-            <img src="/logo.png" alt="Gideon Baptist Church logo" className="w-24 h-24 mb-4" />
-            <h3 className="font-serif text-xl font-bold text-white mb-1">Gideon Baptist Church</h3>
+            <img src="/gbc-logo.png" alt="Gideon Baptist Church logo" className="w-48 mb-4" />
             <p className="text-sm leading-relaxed">
               13899 Stephens Road<br />
               Warren, MI 48089<br />
