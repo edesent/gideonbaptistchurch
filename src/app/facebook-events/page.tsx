@@ -32,7 +32,7 @@ export default function FacebookEvents() {
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-md p-4 md:p-6 flex justify-center">
+          <div className="bg-white rounded-2xl shadow-md p-0 md:p-6 flex justify-center overflow-hidden">
             <iframe
               src={embedSrc}
               title="Gideon Baptist Church Facebook posts"
