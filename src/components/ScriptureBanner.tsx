@@ -15,11 +15,10 @@ export default function ScriptureBanner() {
       <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
         <blockquote>
           <p className="font-serif text-2xl md:text-3xl italic text-white leading-relaxed mb-5">
-            &ldquo;For God so loved the world, that he gave his only begotten Son, that
-            whosoever believeth in him should not perish, but have everlasting life.&rdquo;
+            &ldquo;And I, if I be lifted up from the earth, will draw all men unto me.&rdquo;
           </p>
           <cite className="text-sm font-semibold tracking-[0.12em] uppercase text-gold-light not-italic">
-            — John 3:16
+            — John 12:32
           </cite>
         </blockquote>
       </div>

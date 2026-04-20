@@ -86,8 +86,8 @@ export default function Footer() {
               </a>
             </div>
             <p className="text-sm italic text-white/40 leading-relaxed">
-              &ldquo;The Lord is my light and my salvation; whom shall I fear?&rdquo;<br />
-              <em className="not-italic text-white/30">— Psalm 27:1</em>
+              &ldquo;And I, if I be lifted up from the earth, will draw all men unto me.&rdquo;<br />
+              <em className="not-italic text-white/30">— John 12:32</em>
             </p>
           </div>
         </div>
