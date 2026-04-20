@@ -61,7 +61,7 @@ export default function Navbar() {
         >
           <img src="/gideon-favcon.png" alt="" className="w-8 h-8 object-contain" />
           <div className="flex flex-col">
-            <span className="text-lg font-semibold tracking-[0.25em] uppercase text-gold">
+            <span className="text-sm sm:text-base font-semibold tracking-[0.2em] uppercase text-gold whitespace-nowrap">
               Gideon Baptist Church
             </span>
           </div>
