@@ -15,17 +15,6 @@ const ministries = [
     ),
   },
   {
-    title: "Youth Group",
-    desc: "Empowering teens to grow in their faith through Bible studies, fellowship events, and opportunities to serve their community.",
-    icon: (
-      <svg viewBox="0 0 64 64" fill="none" className="w-16 h-16 text-brown-light">
-        <path d="M12 52V20l20-12 20 12v32" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M24 52V36h16v16" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M32 8v8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-      </svg>
-    ),
-  },
-  {
     title: "Missions & Outreach",
     desc: "Carrying the Gospel beyond our walls — supporting missionaries around the world and serving our local Warren community.",
     icon: (
