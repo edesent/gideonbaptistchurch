@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     "Recent public Facebook posts and event history from Gideon Baptist Church in Warren, MI.",
 };
 
-const FB_PAGE_URL = "https://www.facebook.com/profile.php?id=100080675370083";
+const FB_PAGE_URL = "https://www.facebook.com/profile.php?id=61576299790207";
 
 export default function FacebookEvents() {
   const href = encodeURIComponent(FB_PAGE_URL);
