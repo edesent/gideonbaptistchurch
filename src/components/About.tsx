@@ -24,6 +24,7 @@ const cards: Card[] = [
     title: "Our Beliefs",
     text: "We are an independent, missions-minded, King James Bible church. The King James Version of the Bible is our textbook, and the New Testament is our standard for doctrine and practice. We hold fast to the fundamentals of the Christian faith.",
     placeholder: "Bible / Scripture Photo",
+    image: "/kjv-bible.jpg",
     icon: (
       <rect x="120" y="80" width="160" height="120" rx="8" fill="rgba(139,69,19,0.12)" />
     ),
