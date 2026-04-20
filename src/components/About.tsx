@@ -2,11 +2,20 @@
 
 import AnimateOnScroll from "./AnimateOnScroll";
 
-const cards = [
+type Card = {
+  title: string;
+  text: string;
+  placeholder: string;
+  image?: string;
+  icon: React.ReactNode;
+};
+
+const cards: Card[] = [
   {
     title: "Our History",
     text: "Established and incorporated in 1956, Gideon Baptist Church has grown from a small congregation into a vibrant church family, faithfully serving the Lord and the Warren community for generations.",
     placeholder: "Church History Photo",
+    image: "/church-sanctuary.jpg",
     icon: (
       <path d="M200 60 L200 220 M140 120 L260 120" stroke="rgba(139,69,19,0.2)" strokeWidth="6" />
     ),
@@ -57,13 +66,17 @@ export default function About() {
             <AnimateOnScroll key={card.title} delay={i * 120}>
               <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1.5 hover:shadow-lg transition-all h-full">
                 <div className="h-56 overflow-hidden">
-                  <svg viewBox="0 0 400 280" className="w-full h-full">
-                    <rect width="400" height="280" fill="#f0e4d4" />
-                    {card.icon}
-                    <text x="200" y="250" textAnchor="middle" fill="rgba(139,69,19,0.3)" fontSize="14" fontFamily="sans-serif">
-                      {card.placeholder}
-                    </text>
-                  </svg>
+                  {card.image ? (
+                    <img src={card.image} alt={card.title} className="w-full h-full object-cover" />
+                  ) : (
+                    <svg viewBox="0 0 400 280" className="w-full h-full">
+                      <rect width="400" height="280" fill="#f0e4d4" />
+                      {card.icon}
+                      <text x="200" y="250" textAnchor="middle" fill="rgba(139,69,19,0.3)" fontSize="14" fontFamily="sans-serif">
+                        {card.placeholder}
+                      </text>
+                    </svg>
+                  )}
                 </div>
                 <div className="p-7">
                   <h3 className="font-serif text-xl font-semibold text-text-dark mb-3">
