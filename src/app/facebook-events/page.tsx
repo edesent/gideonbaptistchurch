@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FacebookFeed from "@/components/FacebookFeed";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -11,9 +12,6 @@ export const metadata: Metadata = {
 const FB_PAGE_URL = "https://www.facebook.com/profile.php?id=61576299790207";
 
 export default function FacebookEvents() {
-  const href = encodeURIComponent(FB_PAGE_URL);
-  const embedSrc = `https://www.facebook.com/plugins/page.php?href=${href}&tabs=timeline&width=500&height=900&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true`;
-
   return (
     <>
       <Navbar />
@@ -34,20 +32,7 @@ export default function FacebookEvents() {
 
           <div className="-mx-6 md:mx-0">
             <div className="bg-white md:rounded-2xl md:shadow-md p-0 md:p-6 flex justify-center overflow-hidden">
-              <iframe
-                src={embedSrc}
-                title="Gideon Baptist Church Facebook posts"
-                style={{
-                  border: "none",
-                  overflow: "hidden",
-                  width: "100%",
-                  maxWidth: "500px",
-                  height: "900px",
-                }}
-                scrolling="no"
-                allow="encrypted-media"
-                loading="lazy"
-              />
+              <FacebookFeed pageUrl={FB_PAGE_URL} />
             </div>
           </div>
 
