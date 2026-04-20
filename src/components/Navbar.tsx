@@ -8,6 +8,7 @@ const navLinks = [
   { href: "#services", label: "Services" },
   { href: "#ministries", label: "Ministries" },
   { href: "#events", label: "Events" },
+  { href: "/messages", label: "Messages" },
   { href: "#contact", label: "Contact" },
   { href: "/statement-of-faith", label: "Beliefs" },
 ];
@@ -52,7 +53,7 @@ export default function Navbar() {
         >
           <img src="/gideon-favcon.png" alt="" className="w-8 h-8 object-contain" />
           <div className="flex flex-col">
-            <span className="font-serif text-lg font-bold tracking-wide">
+            <span className="text-sm font-semibold tracking-[0.25em] uppercase">
               Gideon Baptist Church
             </span>
           </div>
