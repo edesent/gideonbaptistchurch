@@ -36,9 +36,13 @@ export default function FacebookEvents() {
             <iframe
               src={embedSrc}
               title="Gideon Baptist Church Facebook posts"
-              width="500"
-              height="900"
-              style={{ border: "none", overflow: "hidden", maxWidth: "100%" }}
+              style={{
+                border: "none",
+                overflow: "hidden",
+                width: "100%",
+                maxWidth: "500px",
+                height: "900px",
+              }}
               scrolling="no"
               allow="encrypted-media"
               loading="lazy"
