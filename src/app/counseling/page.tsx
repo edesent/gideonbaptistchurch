@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ChatButton from "@/components/ChatButton";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -98,12 +99,12 @@ export default function Counseling() {
               >
                 Call (586) 772-3230
               </a>
-              <a
-                href="/#contact"
-                className="inline-block text-white font-semibold text-sm tracking-wide uppercase px-8 py-3.5 rounded-full border-2 border-white/40 hover:bg-white/10 hover:border-white transition-all"
+              <ChatButton
+                prefill="Hi Pastor Ross, I'd like to schedule a pastoral counseling appointment."
+                className="inline-block text-white font-semibold text-sm tracking-wide uppercase px-8 py-3.5 rounded-full border-2 border-white/40 hover:bg-white/10 hover:border-white transition-all cursor-pointer"
               >
                 Send a Message
-              </a>
+              </ChatButton>
             </div>
           </div>
         </div>
