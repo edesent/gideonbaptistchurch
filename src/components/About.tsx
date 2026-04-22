@@ -7,6 +7,8 @@ type Card = {
   text: string;
   placeholder: string;
   image?: string;
+  href?: string;
+  linkLabel?: string;
   icon: React.ReactNode;
 };
 
@@ -25,6 +27,8 @@ const cards: Card[] = [
     text: "We are an independent, missions-minded, King James Bible church. The King James Version of the Bible is our textbook, and the New Testament is our standard for doctrine and practice. We hold fast to the fundamentals of the Christian faith.",
     placeholder: "Bible / Scripture Photo",
     image: "/kjv-bible.jpg",
+    href: "/statement-of-faith",
+    linkLabel: "Read Our Statement of Faith",
     icon: (
       <rect x="120" y="80" width="160" height="120" rx="8" fill="rgba(139,69,19,0.12)" />
     ),
@@ -66,7 +70,7 @@ export default function About() {
         <div className="grid md:grid-cols-3 gap-8">
           {cards.map((card, i) => (
             <AnimateOnScroll key={card.title} delay={i * 120}>
-              <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1.5 hover:shadow-lg transition-all h-full">
+              <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1.5 hover:shadow-lg transition-all h-full flex flex-col">
                 <div className="h-56 overflow-hidden">
                   {card.image ? (
                     <img src={card.image} alt={card.title} className="w-full h-full object-cover" />
@@ -80,11 +84,20 @@ export default function About() {
                     </svg>
                   )}
                 </div>
-                <div className="p-7">
+                <div className="p-7 flex-1 flex flex-col">
                   <h3 className="font-serif text-xl font-semibold text-text-dark mb-3">
                     {card.title}
                   </h3>
-                  <p className="text-[0.92rem] text-text-light leading-relaxed">{card.text}</p>
+                  <p className="text-[0.92rem] text-text-light leading-relaxed flex-1">{card.text}</p>
+                  {card.href && (
+                    <a
+                      href={card.href}
+                      className="inline-flex items-center gap-1 mt-5 text-sm font-semibold text-gold-dark hover:text-brown-light transition-colors"
+                    >
+                      {card.linkLabel || "Learn More"}
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  )}
                 </div>
               </div>
             </AnimateOnScroll>
