@@ -69,7 +69,7 @@ export default function History() {
             </h2>
             <img
               src="/pastors.png"
-              alt="Past pastors of Gideon Baptist Church: Bro. Bill Hendrick, Bro. W.L. Bryant, Bro. Roman Alvarez, Bro. Paul Fowler, Bro. Tim Klink, and Bro. Greg Hayward"
+              alt="Past pastors of Gideon Baptist Church: Bro. Bill Hendrick, Bro. W.L. Bryant, Bro. Roman Alvarez, Bro. Paul Fowler, Bro. James Staub, Bro. Tim Klink, and Bro. Greg Hayward"
               className="w-full max-w-3xl mx-auto rounded-xl"
             />
           </div>
