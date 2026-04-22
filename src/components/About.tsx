@@ -18,6 +18,8 @@ const cards: Card[] = [
     text: "Established and incorporated in 1956, Gideon Baptist Church has grown from a small congregation into a vibrant church family, faithfully serving the Lord and the Warren community for generations.",
     placeholder: "Church History Photo",
     image: "/church-sanctuary.jpg",
+    href: "/history",
+    linkLabel: "See Our Pastors Through the Years",
     icon: (
       <path d="M200 60 L200 220 M140 120 L260 120" stroke="rgba(139,69,19,0.2)" strokeWidth="6" />
     ),
