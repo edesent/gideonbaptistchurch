@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Welcome from "@/components/Welcome";
 import Services from "@/components/Services";
 import About from "@/components/About";
+import StillChurch from "@/components/StillChurch";
 import Ministries from "@/components/Ministries";
 import ScriptureBanner from "@/components/ScriptureBanner";
 import Events from "@/components/Events";
@@ -108,6 +109,7 @@ export default function Home() {
       <Welcome />
       <Services />
       <About />
+      <StillChurch />
       <Ministries />
       <ScriptureBanner />
       <Events />
