@@ -75,6 +75,32 @@ export default function Pastor() {
               </div>
             </div>
           </div>
+
+          {/* Pastor's Quote */}
+          <div className="mt-16 md:mt-20">
+            <div className="relative bg-brown-deep rounded-2xl overflow-hidden shadow-xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-brown-deep to-burgundy-dark" />
+              <span
+                aria-hidden="true"
+                className="absolute top-6 left-8 font-serif text-[10rem] leading-none text-gold/20 select-none"
+              >
+                &ldquo;
+              </span>
+              <div className="relative z-10 px-10 py-14 md:px-16 md:py-16 text-center">
+                <p className="font-serif italic text-xl md:text-2xl text-white leading-relaxed max-w-3xl mx-auto">
+                  Without apology, I will stand against the evil deception of the
+                  ecumenical movement and unbelieving men, and call God&rsquo;s people
+                  to Biblical separation. I will love the Lord, preach His Word, call
+                  sinners to repentance, and proclaim cleansing through His precious
+                  Blood — by faith alone, by the immeasurable grace of Almighty God.
+                </p>
+                <div className="w-16 h-[2px] bg-gold mx-auto my-6 rounded" />
+                <p className="text-sm font-semibold tracking-[0.2em] uppercase text-gold-light">
+                  — Pastor Timothy Ross
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
       <Footer />
