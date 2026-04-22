@@ -5,45 +5,96 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Statement of Faith",
   description:
-    "The Statement of Faith of Gideon Baptist Church in Warren, MI. We believe the whole Bible as the verbally inspired and infallible Word of God.",
+    "The Statement of Faith of Gideon Baptist Church in Warren, MI — an Independent, KJV Bible-believing Baptist church. Our doctrine on Scripture, the Trinity, Jesus Christ, salvation, the Church, and the Second Coming.",
 };
 
-const beliefs = [
+const sections = [
   {
-    text: "We believe the whole Bible from Genesis 1:1 to Revelation 22:21 as the verbally inspired and infallible WORD OF GOD.",
-    verse: "II Timothy 3:16",
+    title: "Scriptures",
+    body: (
+      <>
+        We believe in the verbal, plenary inspiration of the entire Bible, both the
+        Old and New Testaments. We further accept the Masoretic and Textus Receptus
+        manuscripts from which came the King James Bible, and we accept the King
+        James Bible as the divinely preserved and perfect Word of God for the
+        English-speaking world.
+      </>
+    ),
   },
   {
-    text: "We believe Jesus was born of Mary the Virgin, and is the Son of God and God the Son.",
-    verse: "Luke 1:35",
+    title: "The Trinity",
+    body: (
+      <>
+        We believe that God is a person, eternally existing as a Trinity, manifesting
+        Himself in three Persons: God the Father, God the Son, and God the Holy
+        Spirit. We further believe that these three are one God, but separate in
+        personality and work.
+      </>
+    ),
   },
   {
-    text: "We believe that Christ died for our sins according to the Scriptures, the Just for the unjust, that He might bring us to God.",
-    verse: "I Peter 3:18",
+    title: "Jesus Christ",
+    body: (
+      <>
+        We believe that Jesus Christ is the only begotten Son of God — eternally
+        existing, yet born of a virgin. Being God, He lived a sinless life, making
+        His death on the Cross both sufficient and substitutionary for the sins of
+        the whole world. After making atonement for the sins of the world with His
+        own blood, He ascended into Heaven with a glorified body, where He is
+        seated at the right hand of the Father as Head of the Church, making
+        intercession for the saints as our High Priest.
+      </>
+    ),
   },
   {
-    text: "We believe that Christ rose from the grave the third day according to the Scriptures.",
-    verse: "I Corinthians 15:3–4",
+    title: "Salvation",
+    body: (
+      <>
+        We believe that man is lost in sin and must be born again to enter the
+        Kingdom of God. We believe that for lost and sinful men, regeneration by
+        the Holy Ghost is absolutely essential. The salvation of a man&rsquo;s soul
+        is by grace alone, through personal faith in the finished work of Christ on
+        the Cross.
+      </>
+    ),
   },
   {
-    text: "We believe that He only is the great High Priest, and we need not the intercession of any man, but that Christ ever liveth to make intercession for us.",
-    verse: "Hebrews 7:25",
+    title: "The Church",
+    body: (
+      <>
+        We believe that the local church is a group of believers baptized in water,
+        assembled together for edification, exhortation, and evangelism as commanded
+        by Christ in the Great Commission — preaching the gospel to every creature.
+        We believe God&rsquo;s program today is centered in the local New Testament
+        church, which is independent and missionary-minded.
+      </>
+    ),
   },
   {
-    text: "We believe that Christ will come again in person, to rapture all believers before the Great Tribulation, and shall return in person, bodily, visibly, to establish His Kingdom on the earth for 1,000 years.",
-    verse: "Acts 1:11",
+    title: "The Second Coming",
+    body: (
+      <>
+        We believe the Lord Jesus Christ Himself is coming again in the air at any
+        moment to rapture His own and to reward their service. The unbelievers left
+        behind will go through a seven-year period called the Tribulation, after
+        which Christ shall return visibly to the earth with His saints to set up His
+        Kingdom of one thousand years of righteous rule. After this, the unbelievers
+        of all the ages will stand at the Great White Throne to be judged and cast
+        into the Lake of Fire, separated from God forever, while believers will
+        spend eternity in the fullness of joy in Heaven with the Lord.
+      </>
+    ),
   },
   {
-    text: 'We believe that in order to be saved, a person must be born again — "Ye must be born again."',
-    verse: "John 3:3–7",
-  },
-  {
-    text: "We believe that every truly born-again person should declare his faith by the act of baptism (immersion in water), setting forth the Lord's death, burial, and resurrection.",
-    verse: "Acts 2:41",
-  },
-  {
-    text: 'We believe that the Church is a body of baptized believers whose only mission is not to "reform the world," but to preach and teach the Gospel of salvation to the individual person, and teach them to "observe all things whatsoever I have commanded you."',
-    verse: "Matthew 28:18–20",
+    title: "Positional Statement",
+    body: (
+      <>
+        We hold to the historic Baptist position of Biblical separation. We are
+        Biblical Fundamentalists and repudiate the liberal and unscriptural
+        religious trends of the day: Ecumenicalism, Neo-Orthodoxy, New
+        Evangelicalism, and the excesses of the Charismatic Movement.
+      </>
+    ),
   },
 ];
 
@@ -68,23 +119,23 @@ export default function StatementOfFaith() {
             </p>
           </div>
 
-          {/* Beliefs */}
+          {/* Sections */}
           <div className="space-y-6">
-            {beliefs.map((belief, i) => (
+            {sections.map((section, i) => (
               <div
-                key={i}
+                key={section.title}
                 className="bg-white rounded-2xl p-8 shadow-sm border border-brown-deep/[.04] hover:shadow-md transition-all"
               >
-                <div className="flex gap-5">
-                  <span className="flex-shrink-0 w-10 h-10 rounded-full bg-gold/15 text-gold-dark font-serif font-bold text-lg flex items-center justify-center mt-0.5">
+                <div className="flex items-start gap-5">
+                  <span className="flex-shrink-0 w-10 h-10 rounded-full bg-gold/15 text-gold-dark font-serif font-bold text-lg flex items-center justify-center mt-1">
                     {i + 1}
                   </span>
                   <div>
+                    <h2 className="font-serif text-xl md:text-2xl font-bold text-text-dark mb-3">
+                      {section.title}
+                    </h2>
                     <p className="text-text-body leading-relaxed text-[1.05rem]">
-                      {belief.text}
-                    </p>
-                    <p className="mt-3 text-sm font-semibold text-gold-dark italic">
-                      — {belief.verse}
+                      {section.body}
                     </p>
                   </div>
                 </div>

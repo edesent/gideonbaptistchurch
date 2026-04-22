@@ -44,10 +44,10 @@ export default function Welcome() {
                 community, and ultimately, to the world.
               </p>
               <a
-                href="#about"
+                href="/pastor"
                 className="inline-block bg-brown-light text-white font-semibold text-sm tracking-wide uppercase px-8 py-3.5 rounded-full border-2 border-brown-light hover:bg-brown hover:border-brown hover:-translate-y-0.5 hover:shadow-lg transition-all"
               >
-                More About Us
+                Meet Pastor Ross
               </a>
             </div>
           </AnimateOnScroll>
