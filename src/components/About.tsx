@@ -35,9 +35,11 @@ const cards: Card[] = [
   },
   {
     title: "Our Mission",
-    text: "We desire to be an encouragement and blessing to families, to our community, and ultimately, to our country. Our hearts are set on missions, outreach, and sharing the love of Christ with everyone.",
+    text: "We are a very missions-minded church. Our hearts are set on supporting missionaries around the world, reaching our Warren community, and sharing the love of Christ with families, neighbors, and strangers alike.",
     placeholder: "Community / Fellowship Photo",
     image: "/building-outside.jpg",
+    href: "/missionaries",
+    linkLabel: "Meet Our Missionaries",
     icon: (
       <>
         <circle cx="160" cy="140" r="40" fill="rgba(139,69,19,0.1)" />
