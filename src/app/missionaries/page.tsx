@@ -5,17 +5,100 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Our Missionaries",
   description:
-    "Gideon Baptist Church supports missionaries around the world. Meet the families and ministries we partner with to spread the Gospel.",
+    "Gideon Baptist Church proudly supports missionaries serving in Brazil, Bolivia, New Zealand, Australia, Thailand, the Philippines, and around the world.",
 };
 
+type Missionary = { name: string; isMinistry?: boolean };
+type Region = { country: string; missionaries: Missionary[] };
+
+const regions: Region[] = [
+  {
+    country: "Brazil",
+    missionaries: [
+      { name: "Frank & Darla Brim" },
+      { name: "Tim & Betty Hawkins" },
+      { name: "Kyron & Antonia Horton" },
+      { name: "Mark & Dana McCutchen" },
+      { name: "Bill & Sharon Smith" },
+    ],
+  },
+  {
+    country: "Bolivia",
+    missionaries: [
+      { name: "Daniel & Mary Brooks" },
+      { name: "Matias & Amparito Brooks" },
+    ],
+  },
+  {
+    country: "New Zealand",
+    missionaries: [
+      { name: "Dale & Janet Brown" },
+      { name: "Tim & Joy Guenther" },
+    ],
+  },
+  {
+    country: "Australia",
+    missionaries: [{ name: "Kenneth & Cynthia Chapman" }],
+  },
+  {
+    country: "Guatemala",
+    missionaries: [{ name: "Daniel & Tammy Coats" }],
+  },
+  {
+    country: "Thailand",
+    missionaries: [{ name: "Brian & Jamie Cone" }],
+  },
+  {
+    country: "Iraq & the Middle East",
+    missionaries: [{ name: "Jasper & Manjula Dalavai" }],
+  },
+  {
+    country: "Mexico",
+    missionaries: [{ name: "Wendel & Cindy Johnson" }],
+  },
+  {
+    country: "Republic of Palau",
+    missionaries: [{ name: "Terry & Gloria McClure" }],
+  },
+  {
+    country: "Philippines",
+    missionaries: [{ name: "Ramil & Lanie (Melanie) Ofrecio" }],
+  },
+  {
+    country: "Honduras",
+    missionaries: [
+      { name: "Harold Friday" },
+      { name: "Radio Honduras", isMinistry: true },
+    ],
+  },
+  {
+    country: "Spain",
+    missionaries: [{ name: "Billy & Dena Rose" }],
+  },
+  {
+    country: "Quebec, Canada",
+    missionaries: [{ name: "David & Debra Smith" }],
+  },
+  {
+    country: "Ghana, North Africa",
+    missionaries: [{ name: "John & Patty Sommer" }],
+  },
+  {
+    country: "Indonesia",
+    missionaries: [{ name: "Karen Werth" }],
+  },
+];
+
 export default function Missionaries() {
+  const total = regions.reduce((sum, r) => sum + r.missionaries.length, 0);
+
   return (
     <>
       <Navbar />
       <main className="pt-32 pb-24 bg-warm-white min-h-screen">
-        <div className="max-w-5xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-6">
           {/* Header */}
-          <div className="text-center mb-14">
+          <div className="text-center mb-12">
             <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-gold-dark mb-3">
               To the Ends of the Earth
             </span>
@@ -25,13 +108,13 @@ export default function Missionaries() {
             <div className="w-20 h-[3px] bg-gold mx-auto mb-6 rounded" />
             <p className="text-lg text-text-light max-w-2xl mx-auto">
               Gideon Baptist Church is a very missions-minded church. We are honored
-              to partner with faithful servants who are carrying the Gospel to the
-              corners of the world.
+              to partner with {total} faithful servants and ministries carrying the
+              Gospel to {regions.length} countries and regions around the world.
             </p>
           </div>
 
           {/* Verse */}
-          <div className="bg-white border-l-4 border-gold rounded-2xl p-8 mb-12 shadow-sm">
+          <div className="bg-white border-l-4 border-gold rounded-2xl p-8 mb-14 shadow-sm max-w-3xl mx-auto">
             <p className="font-serif italic text-lg md:text-xl text-text-body leading-relaxed mb-3">
               &ldquo;Go ye therefore, and teach all nations, baptizing them in the
               name of the Father, and of the Son, and of the Holy Ghost.&rdquo;
@@ -39,30 +122,43 @@ export default function Missionaries() {
             <p className="text-sm font-semibold text-gold-dark">— Matthew 28:19</p>
           </div>
 
-          {/* Coming Soon */}
-          <div className="bg-white rounded-2xl p-10 md:p-14 text-center shadow-sm">
-            <svg viewBox="0 0 64 64" fill="none" className="w-16 h-16 mx-auto mb-6 text-gold">
-              <circle cx="32" cy="32" r="24" stroke="currentColor" strokeWidth="2.5" />
-              <path d="M8 32h48M32 8c6 8 9 16 9 24s-3 16-9 24M32 8c-6 8-9 16-9 24s3 16 9 24" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-            </svg>
-            <h2 className="font-serif text-2xl md:text-3xl font-bold text-text-dark mb-3">
-              Missionary Profiles Coming Soon
-            </h2>
-            <p className="text-text-body leading-relaxed max-w-xl mx-auto mb-8">
-              We&rsquo;re preparing profiles of the missionaries and ministries our
-              church proudly supports. Check back soon to learn about their fields of
-              service, prayer requests, and how you can stand with them.
-            </p>
-            <a
-              href="/#contact"
-              className="inline-block bg-gold text-brown-deep font-semibold text-sm tracking-wide uppercase px-8 py-3.5 rounded-full hover:bg-gold-light transition-all"
-            >
-              Contact Us to Learn More
-            </a>
+          {/* Missionary Grid */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {regions.map((region) => (
+              <div
+                key={region.country}
+                className="bg-white rounded-2xl p-6 shadow-sm border border-brown-deep/[.05] hover:shadow-md hover:border-gold-light transition-all"
+              >
+                <div className="flex items-center gap-3 mb-4 pb-3 border-b border-brown-deep/[.08]">
+                  <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 text-gold-dark flex-shrink-0">
+                    <path d="M12 21s-7-5-7-12a7 7 0 1 1 14 0c0 7-7 12-7 12z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+                    <circle cx="12" cy="9" r="2.5" stroke="currentColor" strokeWidth="2" />
+                  </svg>
+                  <h2 className="font-serif text-lg font-bold text-text-dark">
+                    {region.country}
+                  </h2>
+                </div>
+                <ul className="space-y-2">
+                  {region.missionaries.map((m) => (
+                    <li
+                      key={m.name}
+                      className={`text-[0.95rem] ${
+                        m.isMinistry ? "italic text-text-light" : "text-text-body"
+                      }`}
+                    >
+                      {m.name}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
 
           {/* How We Support */}
-          <div className="mt-12 grid md:grid-cols-3 gap-6">
+          <h2 className="font-serif text-3xl font-bold text-text-dark text-center mt-20 mb-8">
+            How We Stand With Them
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-white rounded-2xl p-7 shadow-sm border border-brown-deep/[.04]">
               <div className="w-12 h-12 rounded-full bg-gold/15 flex items-center justify-center mb-4">
                 <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6 text-gold-dark">
