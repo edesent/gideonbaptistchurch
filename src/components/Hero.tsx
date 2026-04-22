@@ -32,7 +32,7 @@ export default function Hero() {
         <p className="text-sm text-gold-light mb-9 animate-fade-up animation-delay-900">
           — Old-Time Hymn
         </p>
-        <div className="flex gap-4 justify-center flex-wrap animate-fade-up animation-delay-1000 mb-10">
+        <div className="flex gap-4 justify-center flex-wrap animate-fade-up animation-delay-1000">
           <a
             href="#services"
             className="inline-block bg-gold text-brown-deep font-semibold text-sm tracking-wide uppercase px-9 py-3.5 rounded-full border-2 border-gold hover:bg-gold-light hover:border-gold-light hover:-translate-y-0.5 hover:shadow-lg transition-all"
@@ -46,16 +46,6 @@ export default function Hero() {
             Learn More
           </a>
         </div>
-        <p className="font-serif text-base md:text-lg italic text-white/85 leading-relaxed max-w-2xl mx-auto mb-2 animate-fade-up animation-delay-1100">
-          &ldquo;Without apology, I will stand against the evil deception of the
-          ecumenical movement and unbelieving men, and call God&rsquo;s people to
-          Biblical separation. I will love the Lord, preach His Word, call sinners
-          to repentance, and proclaim cleansing through His precious Blood — by
-          faith alone, by the immeasurable grace of Almighty God.&rdquo;
-        </p>
-        <p className="text-sm text-gold-light animate-fade-up animation-delay-1100">
-          — Pastor Timothy Ross
-        </p>
       </div>
 
       {/* Scroll indicator */}
