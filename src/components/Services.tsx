@@ -55,7 +55,7 @@ export default function Services() {
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-14">
           <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-gold-light mb-3">
-            Join Us in Worship
+            Welcome Home
           </span>
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-white mb-4">
             Service Times
