@@ -103,6 +103,7 @@ export default function RootLayout({
           data-key="wbc_1061fee63a24434361302602d8f8f0433a57b612ce1aa40f"
           strategy="afterInteractive"
         />
+        <Analytics />
       </body>
     </html>
   );
