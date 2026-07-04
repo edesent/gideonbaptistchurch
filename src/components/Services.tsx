@@ -24,8 +24,8 @@ const services = [
     ),
   },
   {
-    title: "Men's Prayer",
-    time: "Monday - 7:00 PM",
+    title: "Monday Men's Prayer",
+    time: "7:00 PM",
     desc: "Men gather weekly for prayer, encouragement, and seeking the Lord together.",
     icon: (
       <svg viewBox="0 0 48 48" fill="none" className="w-14 h-14 text-gold">
