@@ -34,6 +34,17 @@ const services = [
       </svg>
     ),
   },
+  {
+    title: "Saturday Morning Soul-Winning",
+    time: "10:00 AM",
+    desc: "Join us as we go into our community to share the Gospel and invite others to Christ.",
+    icon: (
+      <svg viewBox="0 0 48 48" fill="none" className="w-14 h-14 text-gold">
+        <path d="M24 8l14 8v16l-14 8-14-8V16l14-8z" stroke="currentColor" strokeWidth="1.5" />
+        <path d="M24 16v16M16 24h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    ),
+  },
 ];
 
 export default function Services() {
