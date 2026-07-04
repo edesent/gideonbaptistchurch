@@ -67,7 +67,7 @@ const regions: Region[] = [
   {
     country: "Honduras",
     missionaries: [
-      { name: "Harold Friday" },
+      { name: "Harold Priday" },
       { name: "Radio Honduras", isMinistry: true },
     ],
   },
