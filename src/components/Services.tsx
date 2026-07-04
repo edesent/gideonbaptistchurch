@@ -36,7 +36,7 @@ const services = [
   },
   {
     title: "Saturday Morning Soul-Winning",
-    time: "10:00 AM",
+    time: "11:30 AM",
     desc: "Join us as we go into our community to share the Gospel and invite others to Christ.",
     icon: (
       <svg viewBox="0 0 48 48" fill="none" className="w-14 h-14 text-gold">
