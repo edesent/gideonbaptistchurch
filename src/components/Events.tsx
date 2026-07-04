@@ -12,6 +12,15 @@ const fallbackEvents = [
     accent: false,
   },
   {
+    month: "MON",
+    day: "Every",
+    label: "Week",
+    title: "Men's Prayer",
+    time: "7:00 PM",
+    description: "Men gather each Monday evening for a time of prayer, encouragement, and seeking the Lord together.",
+    accent: false,
+  },
+  {
     month: "WED",
     day: "Every",
     label: "Week",
@@ -30,7 +39,6 @@ export default async function Events() {
   return (
     <section id="events" className="py-24 bg-cream">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-14">
           <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-gold-dark mb-3">
             What&rsquo;s Happening
@@ -46,10 +54,7 @@ export default async function Events() {
         <EventCards events={events} />
 
         <div className="text-center mt-12">
-          <a
-            href="/facebook-events"
-            className="inline-block bg-gold text-brown-deep font-semibold text-sm tracking-wide uppercase px-9 py-3.5 rounded-full border-2 border-gold hover:bg-gold-light transition-all"
-          >
+          <a href="/facebook-events" className="inline-block bg-gold text-brown-deep font-semibold text-sm tracking-wide uppercase px-9 py-3.5 rounded-full border-2 border-gold hover:bg-gold-light transition-all">
             Facebook Event History
           </a>
         </div>
