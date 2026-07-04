@@ -64,7 +64,7 @@ export default function Footer() {
             <div className="flex gap-3 mb-6 justify-center sm:justify-start">
               {/* Facebook */}
               <a
-                href="https://www.facebook.com/profile.php?id=100080675370083"
+                href="http://facebook.com/profile.php?id=61576299790207"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
