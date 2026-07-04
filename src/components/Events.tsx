@@ -12,6 +12,15 @@ const fallbackEvents = [
     accent: false,
   },
   {
+    month: "SUN",
+    day: "3rd",
+    label: "Sunday",
+    title: "Food Fellowship",
+    time: "Following the Morning Service",
+    description: "Join us every third Sunday of the month for food and fellowship immediately following the morning service.",
+    accent: true,
+  },
+  {
     month: "MON",
     day: "Every",
     label: "Week",
@@ -37,28 +46,6 @@ export default async function Events() {
   const events = sheetEvents.length > 0 ? sheetEvents : fallbackEvents;
 
   return (
-    <section id="events" className="py-24 bg-cream">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-gold-dark mb-3">
-            What&rsquo;s Happening
-          </span>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-text-dark mb-4">
-            Upcoming Events
-          </h2>
-          <p className="text-lg text-text-light">
-            Stay connected with what&rsquo;s happening at Gideon Baptist.
-          </p>
-        </div>
-
-        <EventCards events={events} />
-
-        <div className="text-center mt-12">
-          <a href="/facebook-events" className="inline-block bg-gold text-brown-deep font-semibold text-sm tracking-wide uppercase px-9 py-3.5 rounded-full border-2 border-gold hover:bg-gold-light transition-all">
-            Facebook Event History
-          </a>
-        </div>
-      </div>
-    </section>
+    <section id="events" className="py-24 bg-cream"><div className="max-w-7xl mx-auto px-6"><div className="text-center max-w-2xl mx-auto mb-14"><span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-gold-dark mb-3">What&rsquo;s Happening</span><h2 className="font-serif text-4xl md:text-5xl font-bold text-text-dark mb-4">Upcoming Events</h2><p className="text-lg text-text-light">Stay connected with what&rsquo;s happening at Gideon Baptist.</p></div><EventCards events={events} /><div className="text-center mt-12"><a href="/facebook-events" className="inline-block bg-gold text-brown-deep font-semibold text-sm tracking-wide uppercase px-9 py-3.5 rounded-full border-2 border-gold hover:bg-gold-light transition-all">Facebook Event History</a></div></div></section>
   );
 }
