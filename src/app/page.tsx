@@ -31,7 +31,7 @@ const churchSchema = {
     addressCountry: "US",
   },
   sameAs: [
-    "https://www.facebook.com/profile.php?id=100080675370083",
+    "http://facebook.com/profile.php?id=61576299790207",
     "https://www.youtube.com/@gideonbaptist9814",
   ],
   openingHoursSpecification: [
